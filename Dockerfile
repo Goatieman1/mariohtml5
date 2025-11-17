@@ -1,18 +1,10 @@
-FROM tomcat:9
+FROM tomcat:11.0.14-jdk25
 
-MAINTAINER github.com/PengBAI
-
+# remove default root webapp, copy your app in one layer
 RUN rm -rf /usr/local/tomcat/webapps/ROOT/*
 
-ADD webapp/ /usr/local/tomcat/webapps/ROOT/
-
-## Create non-root user 
-RUN useradd -ms /bin/bash mario \
-    && usermod -aG mario mario \
-    && chown -R mario:mario /usr/local/tomcat
+COPY webapp/ /usr/local/tomcat/webapps/ROOT/
 
 EXPOSE 8080
+
 CMD ["catalina.sh", "run"]
-
-USER mario
-
