@@ -10,12 +10,9 @@ Image on docker hub: [https://hub.docker.com/r/pengbai/docker-supermario/](https
 
 ## Description
 
+Forked from PengBAI/mariohtml5:master
+
 Run with mapping container's 8080 port, and use your navigator http://localhost:8600:
 ```
 docker run -d -p 8600:8080 pengbai/docker-supermario
 ```
-
-[![](https://github.com/PengBAI/mariohtml5/blob/master/demo/demo.PNG?raw=true)](https://github.com/PengBAI/mariohtml5/blob/master/demo/demo.PNG?raw=true)
-
-
-from gitpod
